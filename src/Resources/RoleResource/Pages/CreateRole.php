@@ -28,6 +28,8 @@ class CreateRole extends CreateRecord
             return Arr::only($data, ['name', 'guard_name', Utils::getTenantModelForeignKey()]);
         }
 
+        $data['guard_name'] = Utils::getFilamentAuthGuard();
+
         return Arr::only($data, ['name', 'guard_name']);
     }
 
